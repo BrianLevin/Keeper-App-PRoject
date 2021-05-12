@@ -8,12 +8,16 @@ function Footer(){
 
 
 
-    return <p>
+    return  (
+    <footer>
+    <p>
 Copyright © {currentYear}
 
     </p>
 
+    </footer>
 
+    );
     
 }
 
