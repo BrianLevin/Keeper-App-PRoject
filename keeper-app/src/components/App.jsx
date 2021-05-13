@@ -25,8 +25,8 @@ content= {noteItem.content}
     return  (
         <div>
 <Header />
-
-notes.map();
+{/* map which renders through and displays all the notes */}
+{notes.map(createNotes)}
 <Footer />
 
 </div>
