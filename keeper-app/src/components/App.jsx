@@ -12,7 +12,12 @@ function App(){
 
     return  (<div>
 <Header />
-<Note />
+<Note 
+//customized props being passed over to the note component
+title ="Title"
+content = "Content"
+
+/>
 <Footer />
 
 
