@@ -17,8 +17,7 @@ function App(){
 <Header />
 {/* map which renders through and displays all the notes into the keeper app as seperate note componeents */}
 {notes.map(// function which renders creates notes and renders a single note component
-    function createNotes(noteItem){
-return <Note 
+    noteItem => <Note 
 // key makes prop unique so method can utilze dynamic arrays
 key = {noteItem.key}
 // prop values to pass to the note.js file
@@ -27,7 +26,7 @@ content= {noteItem.content}
 
 />
 
-    })}
+    )}
 <Footer />
 
 </div>
