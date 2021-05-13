@@ -6,6 +6,8 @@ import Footer from "./Footer";
 
 import Note from "./Note";
 
+import notes from "../notes"
+
 
 
 function App(){

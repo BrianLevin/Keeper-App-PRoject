@@ -1,5 +1,5 @@
 import React from "react";
-// nore being called from app.js
+// note being called from app.js
 function Note(props){
 
 return <div className= "note">
