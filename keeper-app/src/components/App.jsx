@@ -11,19 +11,26 @@ import notes from "../notes"
 
 
 function App(){
+// function which renders creates notes and renders a single note component
+    function createNotes(noteItem){
+return <Note 
 
-    return  (<div>
-<Header />
-<Note 
-//customized props being passed over to the note component
-title ="Title"
-content = "Content"
+// props to pass to the note.js file
+title= {noteItem.title}
+content= {noteItem.content}
 
 />
+
+    }
+    return  (
+        <div>
+<Header />
+
+notes.map();
 <Footer />
 
-
-    </div>
+</div>
+    
     );
 }
 
