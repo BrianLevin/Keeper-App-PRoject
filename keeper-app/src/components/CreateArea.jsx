@@ -33,7 +33,13 @@ function handleChange(event){
 
 function submitNote (event) {
     // props which will pas the note to the add note function on app.js page
-    props.onAdd(note)
+    props.onAdd(note);
+// clear out note object once submitted
+setNote({
+    title: "",
+    content: ""
+})
+
 // prevents forum from refreshining once a note is submitted
 event.preventDefault();
 }
