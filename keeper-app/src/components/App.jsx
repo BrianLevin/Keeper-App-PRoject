@@ -25,10 +25,10 @@ function App(){
 setNotes(prevNotes => {
 
     // get all previous notes and add new note at the end
-    [... prevNotes, newNote]
+     return [... prevNotes, newNote]
 
 
-    }) 
+    }); 
 
 
     }
@@ -40,20 +40,19 @@ setNotes(prevNotes => {
 
     onAdd= {addNote}
 />
-<Note key={1} title="Note title" content="Note content" />
+{/* take the array and render seperate note compoentns for the item */}
+{/* render a differant note component  is going loop through notes array and get each item and execute function */}
+{notes.map((noteItem) => {
+{/* return new note component the properties passed over */}
+    return  <Note
+title= {noteItem.title}
+content = {noteItem.content}
 
-{/* map which renders through and displays all the notes into the keeper app as seperate note componeents */}
-{/* {notes.map(// function which renders creates notes and renders a single note component */}
-    {/* noteItem => <Note  */}
-{/* // key makes prop unique so method can utilze dynamic arrays
-// key = {noteItem.key}
-// prop values to pass to the note.js file
-// title= {noteItem.title}
-// content= {noteItem.content} */}
 
-{/* /> */}
+    /> 
+})}
 
-    {/* )} */}
+
 <Footer />
 
 </div>
