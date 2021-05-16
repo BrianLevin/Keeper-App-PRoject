@@ -55,9 +55,15 @@ setNotes(prevNotes => {
 />
 {/* take the array and render seperate note compoentns for the item */}
 {/* render a differant note component  is going loop through notes array and get each item and execute function */}
-{notes.map((noteItem) => {
+{notes.map(((noteItem, index) => {
 {/* return new note component the properties passed over  or delete if note delete is selected*/}
-    return  <Note title= {noteItem.title} content = {noteItem.content} onDelete = {deleteNote}  /> 
+{/* when each note component is rendered, going to pass over the note item in the notes array as the id  whcih will be picked up in the note component */}
+    return  <Note 
+    key ={index}
+
+    id= {index}
+    
+    title= {noteItem.title} content = {noteItem.content} onDelete = {deleteNote}  /> 
 })}
 
 

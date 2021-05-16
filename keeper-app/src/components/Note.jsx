@@ -3,7 +3,7 @@ import React from "react";
 function Note(props){
 // function to handle the delete when clicked
     function handleClick(){
-props.onDelete()
+props.onDelete(props.id)
 
     }
 
