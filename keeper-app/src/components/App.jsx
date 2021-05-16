@@ -15,9 +15,20 @@ import CreateArea from "./CreateArea";
 
 function App(){
 
-// pass in function as prop to get the note  object to the app.js
-    function addNote(note){
+// add new note to an array  and will change by adding state
 
+    const [notes, setNotes] = useState([])
+
+// pass in function as prop to get the note  object to the app.js
+    function addNote(newNote){
+ // setnotres function will add new array to notes       
+setNotes(prevNotes => {
+
+    // get all previous notes and add new note at the end
+    [... prevNotes, newNote]
+
+
+    }) 
 
 
     }
