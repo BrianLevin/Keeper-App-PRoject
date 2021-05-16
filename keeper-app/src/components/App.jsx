@@ -32,6 +32,19 @@ setNotes(prevNotes => {
 
 
     }
+// function whcih will dlete note
+    function deleteNote(id){
+// get access to all rpevious notes array and then loop through it using the filter function
+        setNotes(prevNotes =>{
+ return prevNotes.filter((noteItem, index) => {
+// return index where it does not equal the id that needs to be deleted
+    return index !== id;
+
+})
+
+        })
+
+    }
 
     return  (
         <div>
@@ -43,13 +56,8 @@ setNotes(prevNotes => {
 {/* take the array and render seperate note compoentns for the item */}
 {/* render a differant note component  is going loop through notes array and get each item and execute function */}
 {notes.map((noteItem) => {
-{/* return new note component the properties passed over */}
-    return  <Note
-title= {noteItem.title}
-content = {noteItem.content}
-
-
-    /> 
+{/* return new note component the properties passed over  or delete if note delete is selected*/}
+    return  <Note title= {noteItem.title} content = {noteItem.content} onDelete = {deleteNote}  /> 
 })}
 
 
