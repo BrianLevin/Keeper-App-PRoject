@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //stateful constants with object containing title and content
 // const note function setNote
-function CreateArea() {
+function CreateArea(props) {
 const [note,setNote] = useState({
     // intial state is empty
 title: "",
@@ -32,6 +32,8 @@ function handleChange(event){
 }
 
 function submitNote (event) {
+    // props which will pas the note to the add note function on app.js page
+    props.onAdd(note)
 // prevents forum from refreshining once a note is submitted
 event.preventDefault();
 }
