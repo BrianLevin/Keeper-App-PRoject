@@ -32,7 +32,7 @@ function handleChange(event){
 }
 
 function submitNote (event) {
-
+// prevents forum from refreshining once a note is submitted
 event.preventDefault();
 }
 

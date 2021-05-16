@@ -15,10 +15,20 @@ import CreateArea from "./CreateArea";
 
 function App(){
 
+// pass in function as prop to get the note  object to the app.js
+    function addNote(note){
+
+
+
+    }
+
     return  (
         <div>
 <Header />
-<CreateArea />
+<CreateArea 
+
+    onAdd= {addNote}
+/>
 <Note key={1} title="Note title" content="Note content" />
 
 {/* map which renders through and displays all the notes into the keeper app as seperate note componeents */}
