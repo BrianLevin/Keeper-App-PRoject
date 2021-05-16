@@ -14,6 +14,20 @@ function handleChange(event){
   // create new destructured object which will tap into event .taget.name and event.target.value
   const{name,value}= event.target;
 
+
+
+  setNote(prevNote => {
+
+      return{
+          // spread operator which will spread current key value pairs which currently exist in note and add it to final object
+      ...prevNote,
+      // turns string name to the actual value
+      [name]: value
+
+      }
+
+  })
+
 }
 
 function CreateArea() {
