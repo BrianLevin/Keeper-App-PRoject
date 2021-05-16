@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //stateful constants with object containing title and content
 // const note function setNote
+function CreateArea() {
 const [note,setNote] = useState({
     // intial state is empty
 title: "",
@@ -26,20 +27,27 @@ function handleChange(event){
 
       }
 
-  })
+  });
 
 }
 
-function CreateArea() {
+function submitNote (event) {
+
+event.preventDefault();
+}
+
+
   return (
     <div>
       <form>
         <input name="title"  onChange= {handleChange} value= {note.title} placeholder="Title" />
         <textarea name="content"  onChange = {handleChange} value = {note.content} placeholder="Take a note..." rows="3" />
-        <button>Add</button>
+        {/* Button which will pass note back  from handle change to note */}
+        <button onClick={submitNote}>Add</button>
       </form>
     </div>
   );
-}
 
+  }
+  
 export default CreateArea;
