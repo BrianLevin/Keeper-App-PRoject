@@ -5,6 +5,8 @@ import AddIcon from '@material-ui/icons/Add';
 // floating action button
 import Fab from '@material-ui/core/Fab';
 
+import Zoom from '@material-ui/core/Zoom';
+
 //stateful constants with object containing title and content
 // const note function setNote
 function CreateArea(props) {
@@ -56,8 +58,10 @@ event.preventDefault();
       <form className = "create-note">
         <input name="title"  onChange= {handleChange} value= {note.title} placeholder="Title" />
         <textarea name="content"  onChange = {handleChange} value = {note.content} placeholder="Take a note..." rows="3" />
+        <Zoom in={true}>
         {/* Button which will pass note back  from handle change to note */}
         <Fab onClick={submitNote}><AddIcon/></Fab>
+        </Zoom>
       </form>
     </div>
   );
