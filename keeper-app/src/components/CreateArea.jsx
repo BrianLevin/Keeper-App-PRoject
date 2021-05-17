@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import AddIcon from '@material-ui/icons/Add';
 //stateful constants with object containing title and content
 // const note function setNote
 function CreateArea(props) {
@@ -51,7 +53,7 @@ event.preventDefault();
         <input name="title"  onChange= {handleChange} value= {note.title} placeholder="Title" />
         <textarea name="content"  onChange = {handleChange} value = {note.content} placeholder="Take a note..." rows="3" />
         {/* Button which will pass note back  from handle change to note */}
-        <button onClick={submitNote}>Add</button>
+        <button onClick={submitNote}><AddIcon/></button>
       </form>
     </div>
   );
