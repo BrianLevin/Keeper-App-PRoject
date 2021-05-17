@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 import AddIcon from '@material-ui/icons/Add';
+
+// floating action button
+import Fab from '@material-ui/core/Fab';
+
 //stateful constants with object containing title and content
 // const note function setNote
 function CreateArea(props) {
@@ -53,7 +57,7 @@ event.preventDefault();
         <input name="title"  onChange= {handleChange} value= {note.title} placeholder="Title" />
         <textarea name="content"  onChange = {handleChange} value = {note.content} placeholder="Take a note..." rows="3" />
         {/* Button which will pass note back  from handle change to note */}
-        <button onClick={submitNote}><AddIcon/></button>
+        <Fab onClick={submitNote}><AddIcon/></Fab>
       </form>
     </div>
   );
