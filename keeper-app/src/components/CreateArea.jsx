@@ -4,12 +4,16 @@ import AddIcon from '@material-ui/icons/Add';
 
 // floating action button
 import Fab from '@material-ui/core/Fab';
-
+//button zooms in once page is rendered
 import Zoom from '@material-ui/core/Zoom';
 
 //stateful constants with object containing title and content
 // const note function setNote
 function CreateArea(props) {
+
+// holds state if created area is expanded
+const[isExpanded, setExpanded] = useState(false);
+
 const [note,setNote] = useState({
     // intial state is empty
 title: "",
@@ -51,13 +55,20 @@ setNote({
 // prevents forum from refreshining once a note is submitted
 event.preventDefault();
 }
+// gets called when function expand is clicked
+function expand(){
+setExpanded(true)
+
+}
 
 
   return (
     <div>
       <form className = "create-note">
-        <input name="title"  onChange= {handleChange} value= {note.title} placeholder="Title" />
-        <textarea name="content"  onChange = {handleChange} value = {note.content} placeholder="Take a note..." rows="3" />
+      {/* render expanded if true */}
+      {isExpanded ?    <input name="title"  onChange= {handleChange} value= {note.title} placeholder="Title" /> : null}
+   
+        <textarea name="content"  onClick=  {expand} onChange = {handleChange} value = {note.content} placeholder="Take a note..." rows={isExpanded ? 3 :1} />
         <Zoom in={true}>
         {/* Button which will pass note back  from handle change to note */}
         <Fab onClick={submitNote}><AddIcon/></Fab>
