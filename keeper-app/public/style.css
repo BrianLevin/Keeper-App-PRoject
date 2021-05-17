@@ -6,11 +6,12 @@
 html {
   font-family: "Montserrat", sans-serif;
 }
+/* weave.png*/
 body {
   background: #eee;
   padding: 0 16px;
 
-  background-image: url("https://www.transparenttextures.com/patterns/weave.png");
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 
 
 }
